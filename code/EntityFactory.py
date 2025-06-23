@@ -19,9 +19,9 @@ class EntityFactory:
                     list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
             case 'Player1Idle':
-                return Player('Player1Idle', (10, WIN_HEIGHT / 2 - 30))
+                return Player('Player1Idle', ((WIN_WIDTH // 5) - 128, WIN_HEIGHT - 128))  # canto inferior esquerdo
             case 'Player2Idle':
-                return Player('Player2Idle', (10, WIN_HEIGHT / 2 + 30))
+                return Player('Player2Idle', ((WIN_WIDTH // 6) - 128, WIN_HEIGHT - 128))  # mais perto do Player1
             case 'Big_bloated_idle':
                 return Enemy('Big_bloated_idle', (WIN_WIDTH +10, random.randint(40, WIN_HEIGHT - 40)))
             case 'Centipede_idle':
