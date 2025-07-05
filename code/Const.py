@@ -15,8 +15,9 @@ ENTITY_SPEED = {
     'Level1Bg4': 4,
     'Player1Idle': 3,
     'Player2Idle': 3,
-    'Big_bloated_idle': 2,
-    'Centipede_idle': 1,
+    'Enemy1': 2,
+    'Enemy2': 1,
+    'BlueCrystal': 2,
 }
 
 # M
@@ -35,8 +36,8 @@ PLAYER_KEY_LEFT = {'Player1Idle': pygame.K_LEFT,
                  'Player2Idle': pygame.K_a}
 PLAYER_KEY_RIGHT = {'Player1Idle': pygame.K_RIGHT,
                  'Player2Idle': pygame.K_d}
-PLAYER_KEY_SHOOT = {'Player1Idle': pygame.K_RCTRL,
-                 'Player2Idle': pygame.K_LCTRL}
+# PLAYER_KEY_SHOOT = {'Player1Idle': pygame.K_RCTRL,
+#                  'Player2Idle': pygame.K_LCTRL}
 
 # S
 SPAWN_TIME = 4000
