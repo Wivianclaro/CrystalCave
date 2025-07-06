@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from code.Const import ENTITY_SPEED, WIN_HEIGHT
+from code.Const import ENTITY_SPEED
 from code.Entity import Entity
 
 
@@ -10,6 +10,4 @@ class Enemy(Entity):
 
 
     def move(self, ):
-        self.rect.centery += ENTITY_SPEED[self.name]
-        if self.rect.top > 324:
-            self.rect.bottom = 0
+        self.rect.centerx -= ENTITY_SPEED[self.name]

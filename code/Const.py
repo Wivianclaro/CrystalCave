@@ -20,6 +20,19 @@ ENTITY_SPEED = {
     'BlueCrystal': 2,
 }
 
+ENTITY_HEALTH = {
+    'Level1Bg0': 999,
+    'Level1Bg1': 999,
+    'Level1Bg2': 999,
+    'Level1Bg3': 999,
+    'Level1Bg4': 999,
+    'Player1Idle': 300,
+    'Player2Idle': 300,
+    'Enemy1': 50,
+    'Enemy2': 60,
+    'BlueCrystal': 1,
+}
+
 # M
 MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COOPERATIVE',
