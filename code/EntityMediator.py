@@ -1,11 +1,9 @@
-from code.Const import WIN_WIDTH
 from code.Crystal import Crystal
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.Player import Player
 
 class EntityMediator:
-
     @staticmethod
     def __verify_collision_window(ent: Entity):
         if isinstance(ent, Enemy):
@@ -61,4 +59,3 @@ class EntityMediator:
                 if isinstance(ent, Crystal):
                     EntityMediator.__give_score(ent, entity_list)
                 entity_list.remove(ent)
-

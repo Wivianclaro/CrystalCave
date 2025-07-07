@@ -57,8 +57,8 @@ ENTITY_DAMAGE = {
     'Level2Bg4': 0,
     'Player1Idle': 1,
     'Player2Idle': 1,
-    'Enemy1': 60,
-    'Enemy2': 60,
+    'Enemy1': 50,
+    'Enemy2': 50,
     'Crystal': 0,
 }
 

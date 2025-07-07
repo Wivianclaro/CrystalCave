@@ -5,12 +5,10 @@ import pygame
 from pygame import Surface, Rect, KEYDOWN, K_RETURN, K_BACKSPACE, K_ESCAPE
 from pygame.font import Font
 
-from code.Const import C_WHITE, SCORE_POS, MENU_OPTION
+from code.Const import C_WHITE, SCORE_POS, MENU_OPTION, C_BLUE, C_GREEN
 from code.DBProxy import DBProxy
 
-
 class Score:
-
     def __init__(self, window: Surface):
         self.window = window
         self.surf = pygame.image.load('./asset/ScoreBg.png').convert_alpha()
@@ -25,16 +23,16 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.score_text(48, 'YOU WIN!', C_WHITE, SCORE_POS['Title'])
+            text = 'Enter Player 1 name (4 characters):'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-                text = 'Enter Player 1 name (4 characters):'
             if game_mode == MENU_OPTION[1]:
                 score = (player_score[0] + player_score[1]) / 2
                 text = 'Enter Team name (4 characters):'
             if game_mode == MENU_OPTION[2]:
                 if player_score[0] >= player_score[1]:
                     score = player_score[0]
-                    text = 'Enter Player 1 name (4 characters):'
                 else:
                     score = player_score[1]
                     text = 'Enter Player 2 name (4 characters):'
@@ -63,14 +61,14 @@ class Score:
         pygame.mixer_music.play(-1)
         self.window.blit(source=self.surf, dest=self.rect)
         self.score_text(48, 'TOP 10 SCORE', C_WHITE, SCORE_POS['Title'])
-        self.score_text(20, 'NAME      SCORE          DATE          ', C_WHITE, SCORE_POS['Label'])
+        self.score_text(20, 'NAME      SCORE          DATE          ', C_GREEN, SCORE_POS['Label'])
         db_proxy = DBProxy('DBScore')
         list_score = db_proxy.retrieve_top10()
         db_proxy.close()
 
         for player_score in list_score:
             id_, name, score, date = player_score
-            self.score_text(20, f'{name}     {score :05d}        {date}', C_WHITE,
+            self.score_text(20, f'{name}     {score :05d}        {date}', C_BLUE,
                             SCORE_POS[list_score.index(player_score)])
         while True:
             for event in pygame.event.get():
