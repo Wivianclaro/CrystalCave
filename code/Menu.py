@@ -4,7 +4,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, COLOR_BLUE, MENU_OPTION, COLOR_WHITE, COLOR_GREEN
+from code.Const import WIN_WIDTH, C_BLUE, MENU_OPTION, C_WHITE, C_GREEN
 
 
 class Menu:
@@ -13,21 +13,21 @@ class Menu:
         self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
-    def run(self, ):
+    def run(self):
         menu_option = 0
-        pygame.mixer_music.load('./asset/Menu.wav')
+        pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
         while True:
             # Draw images
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Crystal", COLOR_BLUE, ((WIN_WIDTH / 2), 70))
-            self.menu_text(50, "Cave", COLOR_BLUE, ((WIN_WIDTH / 2), 120))
+            self.menu_text(50, "Crystal", C_BLUE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(50, "Cave", C_BLUE, ((WIN_WIDTH / 2), 120))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_GREEN, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_GREEN, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
             pygame.display.flip()
 
             # Check for all events
